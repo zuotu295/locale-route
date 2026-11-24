@@ -1,0 +1,32 @@
+import { readFile } from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
+import { deploy } from './deploy.mjs';
+import { read, signer, submit } from './studionet.mjs';
+
+const digest = (value) => createHash('sha256').update(value).digest('hex');
+const original = digest('hebrew catalog revision one');
+const replacement = digest('hebrew catalog revision two');
+const editor = await signer(process.env.STUDIONET_PRIVATE_KEY);
+const {address, evidence} = await deploy(editor);
+const transactions = {deploy:evidence};
+const send = async (key,args,error) => transactions[key] = await submit(editor,address,'publish',args,key,error);
+const route = () => read(address,'resolve',['he']);
+
+await send('legacyPublish',['iw',original,0]);
+const first = await route();
+assert.deepEqual(first,{canonical:'he',submitted:'iw',digest:original,revision:1});
+assert.equal(await read(address,'resolve',['iw']),null);
+await send('rejectAliasCollision',['he',replacement,0],/revision conflict/);
+assert.deepEqual(await route(),first);
+await send('updateCanonical',['he',replacement,1]);
+const final = await route();
+assert.deepEqual(final,{canonical:'he',submitted:'he',digest:replacement,revision:2});
+await send('rejectDuplicate',['iw',replacement,2],/already published/);
+assert.deepEqual(await route(),final);
+const equivalence = Object.fromEntries(Object.keys(transactions).filter(key => key !== 'deploy').map(key => [key,'he']));
+const readback = [{method:'resolve',args:['he'],result:final},{method:'resolve',args:['iw'],result:null}];
+const path = 'contracts/locale_route.py';
+const bytes = await readFile(new URL('../' + path,import.meta.url));
+const source = {path,sha256:createHash('sha256').update(bytes).digest('hex')};
+console.log('EVIDENCE',JSON.stringify({address,transactions,first,final,source,equivalence,readback}));
