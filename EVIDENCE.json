@@ -1,0 +1,120 @@
+{
+  "address": "0x5c4C575Cfe67AF206dDCcFbD5489d9bF461Ed788",
+  "transactions": {
+    "deploy": {
+      "hash": "0x75b373f126e3f5280ab7ddd261ed9b8f85889f5ec780e3c03738f95d30d4b4ec",
+      "state": "FINALIZED",
+      "execution": "SUCCESS",
+      "from": "0xe55722757c6d63B89C70d3c6e6E34d028283eed8",
+      "consensus": "MAJORITY_AGREE",
+      "votes": {
+        "0x22Eda431B7fBC1216baE3b077a78c973a8719c58": "idle",
+        "0x5e880d85a70De78dDEf86236d57c42e73F560615": "agree",
+        "0x6fe9DE3d0adc76D6416A13CD8107aaE49A3CF98F": "agree",
+        "0x813890bC5bEDEB4F5437570962379F04738F18Cb": "agree",
+        "0x88E148Da14d45c5a5DD2DB25E776eBCBCe0Df539": "agree"
+      }
+    },
+    "legacyPublish": {
+      "hash": "0x209aef99233c35aac0ccbf18090620375c17219ce1435f285c994d4d2ba1dc51",
+      "state": "FINALIZED",
+      "execution": "SUCCESS",
+      "from": "0xe55722757c6d63B89C70d3c6e6E34d028283eed8",
+      "consensus": "MAJORITY_AGREE",
+      "votes": {
+        "0x4eeaD269a60bB89c98a23c1BCd0bd101CafD90E0": "agree",
+        "0x5744305308D62592B7De585e1999c4Ea51E03C29": "agree",
+        "0x6fe9DE3d0adc76D6416A13CD8107aaE49A3CF98F": "agree",
+        "0x813890bC5bEDEB4F5437570962379F04738F18Cb": "idle",
+        "0xee46B9Dc4c860149B1d140840284e5374854e746": "agree"
+      }
+    },
+    "rejectAliasCollision": {
+      "hash": "0xf5b4acbaee90d2d295e7483a2095dc08b6423bfb8a04c5e207cf331a22bf1336",
+      "state": "FINALIZED",
+      "execution": "ERROR",
+      "from": "0xe55722757c6d63B89C70d3c6e6E34d028283eed8",
+      "consensus": "MAJORITY_AGREE",
+      "votes": {
+        "0x19a02f95418A6c76091CDA37C4fc542CA82805c9": "agree",
+        "0x534af64FFB6796Bc69aBf4C26c50788F1fFAfe56": "agree",
+        "0x813890bC5bEDEB4F5437570962379F04738F18Cb": "agree",
+        "0x88E148Da14d45c5a5DD2DB25E776eBCBCe0Df539": "agree",
+        "0xe358f855C96d8E7243836cf986eb037175B9467e": "agree"
+      },
+      "error": "Canonical route revision conflict"
+    },
+    "updateCanonical": {
+      "hash": "0xd83548e699498584de56e3737e9e271dd53283c84297364ba85f7f082a868237",
+      "state": "FINALIZED",
+      "execution": "SUCCESS",
+      "from": "0xe55722757c6d63B89C70d3c6e6E34d028283eed8",
+      "consensus": "MAJORITY_AGREE",
+      "votes": {
+        "0x19a02f95418A6c76091CDA37C4fc542CA82805c9": "idle",
+        "0x240d2d7c8DF220110c26cfFFC532479319Cca0dC": "idle",
+        "0x5e880d85a70De78dDEf86236d57c42e73F560615": "agree",
+        "0xE74a9088aD4d6dBf3C8cABcC0B91072d2a8c8afa": "agree",
+        "0xee46B9Dc4c860149B1d140840284e5374854e746": "agree"
+      }
+    },
+    "rejectDuplicate": {
+      "hash": "0xd0484d293d877897cf579670eecd761c6931e26fc84df92573f1d1f1bb9f07c8",
+      "state": "FINALIZED",
+      "execution": "ERROR",
+      "from": "0xe55722757c6d63B89C70d3c6e6E34d028283eed8",
+      "consensus": "MAJORITY_AGREE",
+      "votes": {
+        "0x19a02f95418A6c76091CDA37C4fc542CA82805c9": "agree",
+        "0x23A15A452F19D1B616276fedC5B8B51d69082959": "idle",
+        "0x5744305308D62592B7De585e1999c4Ea51E03C29": "agree",
+        "0x6DC61b906F74F44612c5545b0b79486133B3556d": "agree",
+        "0x88E148Da14d45c5a5DD2DB25E776eBCBCe0Df539": "idle"
+      },
+      "error": "Content digest already published"
+    }
+  },
+  "first": {
+    "canonical": "he",
+    "submitted": "iw",
+    "digest": "f385424e0705e480c590af72e55580aa1e11ea5e9dafa30e0cf0be59ef09448d",
+    "revision": 1
+  },
+  "final": {
+    "canonical": "he",
+    "submitted": "he",
+    "digest": "3683844b896fc94578c3ebefad89905b27ecf46d1b92f26067187ae54bae03c4",
+    "revision": 2
+  },
+  "source": {
+    "path": "contracts/locale_route.py",
+    "sha256": "e8bbaa4f4e67adb73b94318dfb388379665b7916ff223d3843260d8515eec90e"
+  },
+  "equivalence": {
+    "legacyPublish": "he",
+    "rejectAliasCollision": "he",
+    "updateCanonical": "he",
+    "rejectDuplicate": "he"
+  },
+  "readback": [
+    {
+      "method": "resolve",
+      "args": [
+        "he"
+      ],
+      "result": {
+        "canonical": "he",
+        "submitted": "he",
+        "digest": "3683844b896fc94578c3ebefad89905b27ecf46d1b92f26067187ae54bae03c4",
+        "revision": 2
+      }
+    },
+    {
+      "method": "resolve",
+      "args": [
+        "iw"
+      ],
+      "result": null
+    }
+  ]
+}

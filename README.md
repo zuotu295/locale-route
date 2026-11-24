@@ -21,6 +21,8 @@ STUDIONET_FAUCET=1 npm run deploy
 STUDIONET_FAUCET=1 npm run test:studionet
 ```
 
-Save the JSON object from the smoke test’s `EVIDENCE` output and run `npm run verify -- evidence.json` for read-only verification. The last two commands create new instances with disposable test funds. For a persistent editor identity, supply a funded Studionet key as `STUDIONET_PRIVATE_KEY`. The integration test shows how to submit a digest, handle a revision conflict and read `resolve('he')`.
+Save the JSON object from the smoke test’s `EVIDENCE` output and run `npm run verify -- EVIDENCE.json` for read-only verification. The last two commands create new instances with disposable test funds. For a persistent editor identity, supply a funded Studionet key as `STUDIONET_PRIVATE_KEY`. The integration test shows how to submit a digest, handle a revision conflict and read `resolve('he')`.
 
 [Official lint results](LINT.md)
+
+[Finalized Studionet transactions and state readbacks](EVIDENCE.md) · Run `npm run verify` to reproduce the read-only checks against the included evidence.
